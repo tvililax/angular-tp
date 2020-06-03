@@ -31,7 +31,9 @@ Componant class definition
         private CrudService: CrudService
     ){}
 
-    ngOnInit(){}
+    async ngOnInit(){
+      await this.CrudService.readOneItem('users', `email=${localStorage.getItem('userEmail')}`);
+    };
   }
   export class HeaderComponent implements OnInit {
 

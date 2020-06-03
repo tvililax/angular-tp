@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
   styles: [
   ]
 })
+
 export class HomePageComponent implements OnInit {
 
   constructor(
-    private CrudService: CrudService,
-    private Router: Router
+    private CrudService: CrudService
   ) {}
 
-  private getUserInfo = (email: String ) => {
+    getUserInfo = (email: String ) => {
     // Use CrudService to get user infos
     this.CrudService.readOneItem('users', `email=${email}`)
     .then( data => {
@@ -26,8 +26,8 @@ export class HomePageComponent implements OnInit {
     });
   };
 
-  ngOnInit(){
-    this.getUserInfo('Sincere@april.biz');
+  ngOnInit(){ // initialiser une valeur à notre objet UserInfo
+    // this.getUserInfo('Sincere@april.biz');
   }
 
 }

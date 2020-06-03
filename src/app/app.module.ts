@@ -15,18 +15,23 @@ import { HttpClientModule } from "@angular/common/http";
 import { CrudService } from "./services/crud/crud.service";
 
 import { ObservablesService } from "./services/observable/observable.service";
+import { FormLoginComponent } from './shared/form-login/form-login.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     ConnectedPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot( AppRouterModule, { onSameUrlNavigation: 'reload' } ),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [
     CrudService, 

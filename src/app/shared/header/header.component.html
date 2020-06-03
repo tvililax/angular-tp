@@ -1,11 +1,14 @@
 <div id="header">
-    <ul>
-            <li *ngIf="!userData">
-                    <a [routerLink]="'/'">Home</a>
-                </li>
-                <li *ngIf="userData">
-                    <a [routerLink]="'/connected'">Connected</a>
-            </li>
-    </ul>
-    <h1 *ngIf="userData !== null" [innerText]="userData.name"></h1>
+	<ul>
+		<li>
+			<a *ngIf="!userData" [routerLink]="'/'">Home</a>
+		</li>
+		<li *ngIf="userData">
+			<a [routerLink]="'/connected'">Profile</a>
+		</li>
+		<li *ngIf="userData">
+			<a href="#" (click)="logout()">Logout</a>
+		</li>
+	</ul>
+	<h1 *ngIf="userData !== null" [innerText]="'Hello '+userData.name"></h1>
 </div>
