@@ -1,10 +1,61 @@
+<h1>Login</h1>
+
+<app-form-login (formSubmit)="getUserInfo($event)"> </app-form-login>
+
+<div id='text'></div>
+
 <h1>News feed</h1>
 
-<app-form-login
-    (formSubmit)="getUserInfo($event)"
-></app-form-login>
-
 <h2>Select your information source</h2>
-<select>
-    <option></option>
+
+<select *ngIf="sources" id="salle" [(ngModel)]="sourceSelected">
+
+    <option disabled selected>Choose a media</option>
+    <option *ngFor="let source of sources.sources" [value]="source.id"> {{source.name}} </option>
+    
 </select>
+
+<input id="keyword" type="text" placeholder="What are you looking for ?" [(ngModel)]="keyword" />
+
+<section>
+
+    <button (click)="search()">Submit</button>
+
+</section>
+
+<section id="articles" *ngIf="listMedias">
+
+    <div *ngIf="listMedias.totalResults > 0">
+
+        <div *ngFor="let source of listMedias.articles">
+
+            <div>
+
+                <span>{{ source.title }}</span>
+
+            </div>
+
+            <div>
+
+                <img style="width: 200px;" src="{{ source.urlToImage }}" alt="">
+
+                <div>
+
+                    <p>{{ source.author }}</p>
+                    <p>{{ source.description }}</p>
+                    <a href="{{ source.url }}">See news</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="listMedias.totalResults == 0">
+
+        <p>No results found </p>
+
+    </div>
+
+</section>
