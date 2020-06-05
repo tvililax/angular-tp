@@ -60,12 +60,12 @@ export class HomePageComponent implements OnInit {
     }
 
     // fonction de recherche
-    search(id = null) {
+    search(query = null) {
 
-        if (id) {
+        if (query) {
 
-            this.sourceSelected = id; // parametre = id de la source
-            localStorage.setItem('sourceSelected', id); // on stocke dans Local Storage la source selectionnee
+            this.sourceSelected = query; // parametre = id de la source
+            localStorage.setItem('sourceSelected', query); // on stocke dans Local Storage la source selectionnee
 
         } else {
 

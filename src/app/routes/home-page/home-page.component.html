@@ -23,27 +23,27 @@
 
 </section>
 
-<section id="articles" *ngIf="listMedias">
+<section *ngIf="listMedias">
 
-    <div *ngIf="listMedias.totalResults > 0">
+    <div id="articles" *ngIf="listMedias.totalResults > 0">
 
-        <div *ngFor="let source of listMedias.articles">
+        <div class="article" *ngFor="let source of listMedias.articles">
 
             <div>
 
-                <span>{{ source.title }}</span>
+                <p><b>{{ source.title }}</b></p>
 
             </div>
 
             <div>
 
-                <img style="width: 200px;" src="{{ source.urlToImage }}" alt="">
+                <img style="width: 200px;" src="{{source.urlToImage}}" alt="{{ source.title }}">
 
                 <div>
 
                     <p>{{ source.author }}</p>
                     <p>{{ source.description }}</p>
-                    <a href="{{ source.url }}">See news</a>
+                    <a class="link" href="{{ source.url }}">See news</a>
 
                 </div>
             </div>
