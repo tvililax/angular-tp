@@ -23,7 +23,6 @@
 
 </section>
 
-<section *ngIf="listMedias">
 
     <div id="articles" *ngIf="listMedias.totalResults > 0">
 
@@ -37,11 +36,11 @@
 
             <div>
 
-                <img style="width: 200px;" src="{{source.urlToImage}}" alt="{{ source.title }}">
+                <img style="width: 100%;" src="{{source.urlToImage}}" alt="{{ source.title }}">
 
                 <div>
 
-                    <p>{{ source.author }}</p>
+                    <p><i>{{ source.author }}</i></p>
                     <p>{{ source.description }}</p>
                     <a class="link" href="{{ source.url }}">See news</a>
 
@@ -57,5 +56,3 @@
         <p>No results found </p>
 
     </div>
-
-</section>
