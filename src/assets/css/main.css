@@ -56,15 +56,10 @@ input, select{
     padding: 8px;
 }
 
-#articles{ 
-    display: flex;
-}
-
 .article{
     margin: 25px;
     padding: 10px;
     border-radius: 10px;
     width: 20%;
-    flex-wrap: wrap;
     background: #444444;
 }

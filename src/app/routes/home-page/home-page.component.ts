@@ -13,8 +13,8 @@ import { NewsService } from '../../services/news/news.service';
 export class HomePageComponent implements OnInit {
 
     /* variables pour sources */
+    public mediaSelected: any;
     public sources: any;
-    public sourceSelected: string;
     public listMedias: any;
     public keyword: string;
 
@@ -50,9 +50,9 @@ export class HomePageComponent implements OnInit {
             this.sources = sources;
             console.log(this.sources);
 
-            if (localStorage.getItem('sourceSelected')) { // si le Local Storage contient une source
-                this.sourceSelected = localStorage.getItem('sourceSelected');
-                this.search(this.sourceSelected); // alors on execute la requete
+            if (localStorage.getItem('mediaSelected')) { // si le Local Storage contient une source
+                this.mediaSelected = localStorage.getItem('mediaSelected');
+                this.search(this.mediaSelected); // alors on execute la requete
             }
 
         });
@@ -64,12 +64,12 @@ export class HomePageComponent implements OnInit {
 
         if (query) {
 
-            this.sourceSelected = query; // parametre = id de la source
-            localStorage.setItem('sourceSelected', query); // on stocke dans Local Storage la source selectionnee
+            this.mediaSelected = query; // parametre = id de la source
+            localStorage.setItem('mediaSelected', query); // on stocke dans Local Storage la source selectionnee
 
         } else {
 
-            localStorage.setItem('sourceSelected', this.sourceSelected);
+            localStorage.setItem('mediaSelected', this.mediaSelected);
 
         }
 
@@ -85,7 +85,7 @@ export class HomePageComponent implements OnInit {
 
         //appel a la fonction getByMedia avec 2 parametres
         //on recupere les articles du media et mot cle entre
-        this.newsService.getByMedia(this.sourceSelected, this.keyword).subscribe( sources => { 
+        this.newsService.getByMedia(this.mediaSelected, this.keyword).subscribe( sources => { 
 
             this.listMedias = sources;
             console.log(sources);

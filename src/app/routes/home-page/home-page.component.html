@@ -8,7 +8,7 @@
 
 <h2>Select your information source</h2>
 
-<select *ngIf="sources" id="salle" [(ngModel)]="sourceSelected">
+<select *ngIf="sources" id="salle" [(ngModel)]="mediaSelected">
 
     <option disabled selected>Choose a media</option>
     <option *ngFor="let source of sources.sources" [value]="source.id"> {{source.name}} </option>
