@@ -8,7 +8,7 @@ Here is the list of the features that I developed for this project.
 I am using JSONPlaceHolder for my API calls to manage the users. 
 To login, you need to use one of these e-mail adresses: 
 
-### Sincere@april.biz__
+### Sincere@april.biz
 ### Shanna@melissa.tv
 ### Nathan@yesenia.net
 ### Julianne.OConner@kory.org
